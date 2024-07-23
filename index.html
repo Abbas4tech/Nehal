@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const originalArray = [1, 2, 3, 4, 5, 0];
+      const toConcatArray = [6, 7];
+
+      let sum = 0;
+      for (let i = 0; i < originalArray.length; i++) {
+        sum += originalArray[i];
+      }
+      console.log(sum);
+
+      // ---- Concat ---  refer to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+      const concatedArray = originalArray.concat(toConcatArray);
+
+      // ----- Every --- refer to
+
+      const isEveryItemGreaterThenZero = originalArray.every(
+        (e, i, arr) => e > 0
+      );
+      //   console.log(isEveryItemGreaterThenZero);
+
+      // --- Some ----
+
+      const isAnyItemGreaterThenZero = [-1, -2, 0].some((e) => e > 0);
+      //   console.log(isAnyItemGreaterThenZero);
+
+      // --- filter ----
+
+      const itemsGreaterThenTwo = originalArray.filter((e, i) => i > 2);
+      //   console.log(itemsGreaterThenTwo);
+
+      // --- find ----
+      function greet(e, i, arr) {
+        return e > 2;
+      }
+      const numberThatGreaterThenTwo = originalArray.find(greet);
+      //   console.log(numberThatGreaterThenTwo);
+
+      // ---- findIndex ----
+      const indexOfElemetThatGreaterThenTwo = originalArray.findIndex(greet);
+      //   console.log(indexOfElemetThatGreaterThenTwo);
+
+      // ---- forEach ----
+      const something = originalArray.forEach((e) => {
+        // console.log(e);
+      });
+      //   console.log(something);
+
+      /// ---- includes
+      //   console.log(originalArray.includes(-1));
+
+      /// ---- indexOf
+
+      const normlArr = [1, 2, 3, 1, 1, 2];
+      //   originalArray.indexOf(1);
+      //   console.log(originalArray.indexOf(2));
+
+      const pureArray = normlArr.filter((e, i, arr) => arr.indexOf(e) === i);
+      //   console.log(pureArray);
+
+      /// ---- join
+      const name = [true, false];
+      //   console.log(name.join("+"));
+
+      /// ----- lastIndexOf
+      //   console.log(normlArr.lastIndexOf(2));
+
+      /// ----- map
+      const mappedArray = originalArray.map((e, i, arr) => e);
+      //   console.log(mappedArray, originalArray);
+
+      /// ---- REDUCE
+      const summ = originalArray.reduce((pre, cur) => {
+        pre += cur;
+        return pre;
+      }, 0);
+      console.log(summ);
+    </script>
+  </body>
+</html>
